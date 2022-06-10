@@ -53,6 +53,6 @@ class Controller extends BaseController
 
         Utils::settle($responses)->wait();
 
-        return response($responses);
+        return response('');
     }
 }
