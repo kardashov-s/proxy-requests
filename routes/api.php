@@ -15,6 +15,3 @@
 
 $router->get('/', 'Controller');
 $router->post('/', 'Controller');
-
-$router->get('test', 'ControllerTest');
-$router->post('test', 'ControllerTest');
