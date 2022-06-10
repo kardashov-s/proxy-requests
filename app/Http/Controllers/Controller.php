@@ -35,7 +35,8 @@ class Controller extends BaseController
         $responses  = [];
         foreach (self::PROXIES as $proxy) {
             $responses[] = $http->requestAsync($request->method(), $url, [
-                'proxy' => sprintf('%s://%s:%s@%s:%s',
+                'proxy' => sprintf(
+                    '%s://%s:%s@%s:%s',
                     $proxy['scheme'],
                     $proxy['login'],
                     $proxy['password'],
