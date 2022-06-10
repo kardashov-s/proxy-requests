@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Promise\Promise;
 use GuzzleHttp\Promise\Utils;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
-use function GuzzleHttp\Promise\settle;
 
 class Controller extends BaseController
 {
