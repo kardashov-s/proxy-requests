@@ -15,3 +15,5 @@
 
 $router->get('/', 'Controller');
 $router->post('/', 'Controller');
+
+$router->get('cookies', 'CookiesController');
