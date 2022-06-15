@@ -10,7 +10,7 @@ class Cookie extends Model
     protected $fillable = [
         'proxy_id', 'name', 'value',
         'domain', 'path', 'max_age',
-        'expires', 'secure', 'http_only'
+        'expires', 'secure', 'http_only',
     ];
 
     public function string(): Attribute

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Proxy;
 use GuzzleHttp\Client;
+use GuzzleHttp\Cookie\CookieJar;
+use GuzzleHttp\Cookie\SetCookie;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Promise\Utils;
 use Illuminate\Http\Request;
@@ -25,7 +27,12 @@ class Controller extends BaseController
 
         $responses  = [];
         foreach ($proxies as $proxy) {
+            $cookiesArray = $proxy->cookies->transform(function ($item) {
+                return SetCookie::fromString($item->string);
+            })->toArray();
+
             $responses[] = $http->requestAsync($request->method(), $url, [
+                'cookies' => new CookieJar(cookieArray: $cookiesArray),
                 'proxy' => sprintf(
                     '%s://%s:%s@%s:%s',
                     $proxy->scheme,
