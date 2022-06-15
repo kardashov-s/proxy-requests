@@ -17,7 +17,7 @@ class Cookie extends Model
     {
         return Attribute::make(
             get: fn($value) => sprintf(
-                '%s:%s; expires:%s; path: %s; domain=%s; %s %s %s',
+                '%s=%s; expires=%s; path=%s; domain=%s; %s %s %s',
 
                 $this->name,
                 $this->value,
